@@ -3,8 +3,12 @@ import mongoose from 'mongoose'
 const badgeSchema = new mongoose.Schema(
     {
         name: { type: String, required: true },
-        description: String,
-        icon: String,
+        description: {
+            type: String,
+        },
+        icon: {
+            type: String,
+        },
 
         criteria: {
             type: String,
@@ -28,4 +32,4 @@ const badgeSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('Badge', badgeSchema)
+export const BadgeModel = mongoose.models.Badge || mongoose.model('Badge', badgeSchema)

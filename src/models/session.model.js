@@ -51,4 +51,4 @@ const sessionSchema = new mongoose.Schema(
 sessionSchema.index({ mentor: 1, learner: 1, scheduledAt: -1 })
 
 
-export const session = mongoose.models.Session ||  mongoose.model('Session', sessionSchema)
+export const SessionModel = mongoose.models.Session ||  mongoose.model('Session', sessionSchema)

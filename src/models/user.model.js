@@ -13,7 +13,13 @@ const UserSchema = new Schema({
     },
     password: { 
         type: String, 
-        required: true 
+        default:'',
+    },
+    gitHubLink:{
+        type: String
+    },
+    linkedInLink:{
+        type: String
     },
     
     role: { 
@@ -21,9 +27,15 @@ const UserSchema = new Schema({
         enum: ['user', 'admin'], 
         default: 'user' 
     },
-    profileImage: String,
-    bio: String,
-    location: String,
+    image:{
+        type:String,
+    },
+    bio: {
+        type: String
+    },
+    location: {
+        type:String,
+    },
 
     credits: { 
         type: Number, 
@@ -66,5 +78,5 @@ const UserSchema = new Schema({
     { timestamps: true }
 )
 
-export const User = mongoose.models.User || mongoose.model('User', UserSchema)
+export const UserModel = mongoose.models.User || mongoose.model('User', UserSchema)
 

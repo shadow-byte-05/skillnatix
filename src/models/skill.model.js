@@ -6,8 +6,12 @@ const skillSchema = new Schema(
             type: String, 
             required: true 
         },
-        description: String,
-        category: String,
+        description: {
+            type:String,
+        },
+        category: {
+            type: String,
+        },
         tags: [String],
 
         creator: {
@@ -38,4 +42,4 @@ const skillSchema = new Schema(
     }
 )
 
-const Skill = mongoose.models.Skill || mongoose.model('Skill',skillSchema)
+const SkillModel = mongoose.models.Skill || mongoose.model('Skill',skillSchema)
